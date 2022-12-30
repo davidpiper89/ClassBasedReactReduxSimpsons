@@ -5,7 +5,7 @@ class Image extends Component {
     render() { 
         return (
             
-           <img src={this.props.item.image}></img> 
+           <img src={this.props.simpson.image} alt=""></img> 
            
         );
     }

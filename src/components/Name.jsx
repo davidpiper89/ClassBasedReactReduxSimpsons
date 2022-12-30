@@ -5,7 +5,7 @@ class Name extends Component {
     render() { 
         
         return (<>    
-            {this.props.item.character}
+            {this.props.simpson.character}
             </>  );
     }
 }

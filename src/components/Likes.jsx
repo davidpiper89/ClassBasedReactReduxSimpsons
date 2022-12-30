@@ -1,16 +1,24 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { SET_LIKED_CHARACTER } from "../redux/types";
 
 class Likes extends Component {
-  state = {};
   render() {
     return (
       <h2>
-        <button onClick={() => this.props.addLiked(this.props.item.quote)}>
-          {this.props.item.liked ? "Liked" : "Like?"}
+        <button
+          onClick={() =>
+            this.props.dispatch({
+              type: SET_LIKED_CHARACTER,
+              payload: this.props.simpson.quote,
+            })
+          }
+        >
+          {!this.props.simpson.liked ? "Like?" : "Liked"}
         </button>
       </h2>
     );
   }
 }
 
-export default Likes;
+export default connect()(Likes);
